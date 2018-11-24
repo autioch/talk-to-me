@@ -2,7 +2,7 @@
 
 This is simple project for testing speech synthesis in the browsers.
 
-To see it in action, go to the [github page](http://autioch.github.io/talk-to-me).
+To see it in action, go to the [github page](http://autioch.github.io/talk-to-me/).
 
 
 ## How it works
