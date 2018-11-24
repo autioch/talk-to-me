@@ -1,0 +1,32 @@
+.app-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  position: sticky;
+  padding: 1em;
+  top: 0;
+  background-color: #ddd;
+  box-shadow: 0 0 1em #ddd;
+}
+
+.app-menu__link {
+  text-decoration: none;
+  font-size: 2em;
+
+
+  // color: #212121;
+  // font-size: 1.5em;
+  // padding: .25em 1em;
+  // border-bottom: solid .1em transparent;
+  //
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.active {
+    color: #06f;
+    text-decoration: underline;
+  }
+}

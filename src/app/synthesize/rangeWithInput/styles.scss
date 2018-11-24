@@ -1,0 +1,19 @@
+.c-range {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.c-range__label {
+  flex: none;
+  width: 5em;
+}
+
+.c-range__input {
+  flex: none;
+}
+
+.c-range__track {
+  flex: 1 1 auto;
+  padding: 0 1em;
+}

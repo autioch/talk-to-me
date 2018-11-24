@@ -1,0 +1,27 @@
+html,
+body,
+#root,
+.app,
+.app-content {
+  background-color: #ddd;
+  min-height: 100%;
+}
+
+body {
+}
+
+.app-content {
+  padding: 1em;
+}
+
+
+.app-header {
+  font-size: 1.5em;
+  margin: 1em 0;
+}
+
+.app-error {
+  color: #d33;
+  font-weight: bold;
+  font-size: 1.1em;
+}
