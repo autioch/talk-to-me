@@ -27,7 +27,7 @@ export default {
     const utterance = new SpeechSynthesisUtterance(currentText);
 
     utterance.onend = stopSpeaking;
-    utterance.onerror = speachError;
+    utterance.onerror = (ev) => speachError(ev.error.message).stopSpeaking();
 
     utterance.voice = selectedVoice;
     utterance.pitch = pitch;
@@ -79,9 +79,9 @@ export default {
     };
   },
 
-  speachError(err) {
+  speachError({ data: errorMessage }) {
     return {
-      errorMessage: err.message
+      errorMessage
     };
   },
 
