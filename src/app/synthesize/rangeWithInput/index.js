@@ -3,20 +3,22 @@ import { Slider, InputNumber } from 'antd';
 import './styles.scss';
 
 export default class RangeWithInput extends React.Component {
-constructor(props){
-  super(props);
-  this.state= {
-    inputValue: props.value
-  }
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: props.value
+    };
 
-  onChange = (value) => {
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(value) {
     if (isNaN(value)) {
       return;
     }
 
     this.setState({
-      inputValue: value,
+      inputValue: value
     }, () => this.props.onChange(value));
   }
 

@@ -18,5 +18,4 @@ The store used is `pipe-and-gauge`.
 
 
 ## TODO
-1. Add linter. Basic `create-react-app` has very poor linting capabilities.
-2. Add speech recognition tests.
+1. Add speech recognition tests.

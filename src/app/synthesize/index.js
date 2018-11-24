@@ -5,11 +5,10 @@ import Input from './input';
 import VoiceSelect from './voiceSelect';
 import './styles.scss';
 
-
-export default function Synthesize({ state, store }){
+export default function Synthesize({ state, store }) {
   const { currentText, voices, rate, pitch, isSpeaking } = state;
   const { setText, setVoice, synthesize, setPitch, setRate } = store;
-  const selectedVoice = voices.find(voice => voice.isSelected);
+  const selectedVoice = voices.find((voice) => voice.isSelected);
 
   const canTalk = currentText.length > 0 && !isSpeaking;
 
@@ -31,9 +30,9 @@ export default function Synthesize({ state, store }){
         </div>
         <div className="synthesize-action">
           <Button size="large" disabled={!canTalk} onClick={synthesize}>Talk to me!</Button>
-          {isSpeaking ? <div className="synthesize__speach">Talking...</div>: ''}
+          {isSpeaking ? <div className="synthesize__speach">Talking...</div> : ''}
         </div>
       </div>
     </div>
-  )
+  );
 }

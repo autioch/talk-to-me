@@ -1,4 +1,4 @@
-const IS_DEVELOPMENT = true;
+const IS_DEVELOPMENT = false;
 
 export default {
   currentText: 'Example text',
@@ -8,4 +8,4 @@ export default {
   isSpeaking: false,
   errorMessage: '',
   urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me'
-}
+};

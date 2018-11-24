@@ -5,7 +5,7 @@ import VoiceList from './voiceList';
 import Menu from './menu';
 import './styles.scss';
 
-export default function App ({store, state}) {
+export default function App({ store, state }) {
   const { errorMessage } = state;
 
   return (
@@ -19,5 +19,5 @@ export default function App ({store, state}) {
         </div>
       </Router>
     </div>
-  )
+  );
 }

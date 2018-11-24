@@ -9,7 +9,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src --quiet --fix --ext .js"
   },
   "keywords": [],
   "repository": {
@@ -40,6 +41,13 @@
     "extends":  [
       "qb",
       "react-app"
-    ]
+    ],
+    "rules": {
+      "no-undefined": ["off"],
+      "id-blacklist": ["off"],
+      "id-length": ["error", {
+        "exceptions": ["a","b"]
+      }]
+    }
   }
 }

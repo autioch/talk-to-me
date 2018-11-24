@@ -4,24 +4,24 @@ import { Input } from 'antd';
 const { TextArea } = Input;
 
 export default class SynthesizeInput extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
       value: props.value
-    }
+    };
     this.setText = this.setText.bind(this);
   }
 
-  setText(ev){
-    const {value} = ev.target;
+  setText(ev) {
+    const { value } = ev.target;
 
     this.setState({
       value
-    }, () => this.props.onChange(value))
+    }, () => this.props.onChange(value));
   }
 
-  render(){
+  render() {
     return (
       <TextArea
         rows={4}
