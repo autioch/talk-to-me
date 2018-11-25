@@ -5,6 +5,8 @@ import Input from './input';
 import VoiceSelect from './voiceSelect';
 import './styles.scss';
 
+const SPEECH_NOT_AVAILABLE = 'Sorry, speech synthesis is not available on this device.';
+
 export default function Synthesize({ state, store }) {
   const { currentText, voices, rate, pitch, isSpeaking, isSpeechSupported } = state;
   const { setText, setVoice, synthesize, setPitch, setRate } = store;
@@ -31,6 +33,7 @@ export default function Synthesize({ state, store }) {
           <Button size="large" disabled={!canTalk} onClick={synthesize}>Talk to me!</Button>
           {isSpeaking ? <div className="synthesize__speach">Talking...</div> : ''}
         </div>
+        {isSpeechSupported ? '' : <div className="app-error">{SPEECH_NOT_AVAILABLE}</div>}
       </div>
     </div>
   );

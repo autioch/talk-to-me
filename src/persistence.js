@@ -1,5 +1,7 @@
 const STORAGE_ID = 'talk-to-me-1.0.0';
 
+const PERSISTED_PROPS = ['currentText', 'currentGrammar', 'pitch', 'rate', 'maxAlternatives'];
+
 function getSavedState() {
   let state;
 
@@ -7,11 +9,17 @@ function getSavedState() {
     try {
       const deserialized = JSON.parse(localStorage[STORAGE_ID]);
 
-      state = {
-        currentText: deserialized.currentText,
-        pitch: deserialized.pitch,
-        rate: deserialized.rate
-      };
+      state = PERSISTED_PROPS.reduce((obj, prop) => {
+        const value = deserialized[prop];
+
+        if (value) {
+          Object.assign(obj, {
+            [prop]: deserialized[prop]
+          });
+        }
+
+        return obj;
+      }, {});
     } catch (err) {
       console.log('Failed to restore state'); // eslint-disable-line no-console
     }

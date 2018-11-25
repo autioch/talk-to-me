@@ -45,6 +45,8 @@
     "rules": {
       "no-undefined": ["off"],
       "id-blacklist": ["off"],
+      "line-comment-position": ["off"],
+      "no-inline-comments": ["off"],
       "id-length": ["error", {
         "exceptions": ["a","b"]
       }]

@@ -1,16 +1,26 @@
 import { getSavedState } from './persistence';
 
-const IS_DEVELOPMENT = true;
+const IS_DEVELOPMENT = false;
 
 const defaultState = {
-  currentText: 'Example text',
+  errorMessage: '',
+  urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me',
+
+  /* Synthesize */
+  currentText: 'Test',
   voices: [],
   pitch: 1,
   rate: 1,
   isSpeaking: false,
   isSpeechSupported: !!window.speechSynthesis,
-  errorMessage: '',
-  urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me'
+
+  /* Recognition */
+  isRecognitionSupported: !!(window.SpeechRecognition || window.webkitSpeechRecognition),
+  currentGrammar: 'aqua azure beige bisque black blue brown chocolate coral',
+  isRecognizing: false,
+  recognitionResult: '',
+  recognitionDiagnosis: [],
+  maxAlternatives: 2 // eslint-disable-line no-magic-numbers
 };
 
 const savedState = getSavedState();
