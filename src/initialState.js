@@ -1,6 +1,6 @@
-const IS_DEVELOPMENT = false;
+import { getSavedState } from './persistence';
 
-const STORAGE_ID = 'talk-to-me-1.0.0';
+const IS_DEVELOPMENT = false;
 
 const defaultState = {
   currentText: 'Example text',
@@ -9,21 +9,10 @@ const defaultState = {
   rate: 1,
   isSpeaking: false,
   errorMessage: '',
-  urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me',
-  STORAGE_ID
+  urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me'
 };
 
-/* Try to restore state from previous session. */
-let initialState = defaultState;
-
-if (localStorage[STORAGE_ID]) {
-  try {
-    initialState = JSON.parse(localStorage[STORAGE_ID]);
-    initialState.isSpeaking = false;
-    initialState.errorMessage = '';
-  } catch (err) {
-    console.log('Failed to restore state'); // eslint-disable-line no-console
-  }
-}
+const savedState = getSavedState();
+const initialState = savedState || defaultState;
 
 export default initialState;

@@ -6,7 +6,7 @@ export default function Menu() {
   return (
     <div className="app-menu">
       <NavLink exact className="app-menu__link" to="/">Synthesize</NavLink>
-      <NavLink exact className="app-menu__link" to="/voiceList">Voice list</NavLink>
+      <NavLink exact className="app-menu__link" to="/voiceList">Voices</NavLink>
     </div>
   );
 }
