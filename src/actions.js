@@ -1,5 +1,9 @@
 export default {
-  setVoiceList() {
+  setVoiceList({ state }) {
+    if (!state.isSpeechSupported) {
+      return {};
+    }
+
     const voiceObjects = window.speechSynthesis.getVoices();
     const voices = voiceObjects
       .map((voiceObj, index) => ({
@@ -20,6 +24,9 @@ export default {
   },
 
   synthesize({ state, store }) {
+    if (!state.isSpeechSupported) {
+      return;
+    }
     const { speachError, stopSpeaking, startSpeaking, clearSpeachError } = store;
     const { currentText, rate, pitch, voices } = state;
     const voiceIndex = voices.find((voice) => voice.isSelected).id;

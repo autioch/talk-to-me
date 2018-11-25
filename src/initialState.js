@@ -1,6 +1,6 @@
 import { getSavedState } from './persistence';
 
-const IS_DEVELOPMENT = false;
+const IS_DEVELOPMENT = true;
 
 const defaultState = {
   currentText: 'Example text',
@@ -8,11 +8,12 @@ const defaultState = {
   pitch: 1,
   rate: 1,
   isSpeaking: false,
+  isSpeechSupported: !!window.speechSynthesis,
   errorMessage: '',
   urlFolderPath: IS_DEVELOPMENT ? '' : '/talk-to-me'
 };
 
 const savedState = getSavedState();
-const initialState = savedState || defaultState;
+const initialState = Object.assign({}, defaultState, savedState);
 
 export default initialState;

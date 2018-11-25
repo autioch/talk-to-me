@@ -6,10 +6,10 @@ import VoiceSelect from './voiceSelect';
 import './styles.scss';
 
 export default function Synthesize({ state, store }) {
-  const { currentText, voices, rate, pitch, isSpeaking } = state;
+  const { currentText, voices, rate, pitch, isSpeaking, isSpeechSupported } = state;
   const { setText, setVoice, synthesize, setPitch, setRate } = store;
 
-  const canTalk = currentText.length > 0 && !isSpeaking;
+  const canTalk = isSpeechSupported && currentText.length > 0 && !isSpeaking;
 
   return (
     <div className="app-content">

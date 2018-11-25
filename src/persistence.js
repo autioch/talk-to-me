@@ -5,9 +5,13 @@ function getSavedState() {
 
   if (localStorage[STORAGE_ID]) {
     try {
-      state = JSON.parse(localStorage[STORAGE_ID]);
-      state.isSpeaking = false;
-      state.errorMessage = '';
+      const deserialized = JSON.parse(localStorage[STORAGE_ID]);
+
+      state = {
+        currentText: deserialized.currentText,
+        pitch: deserialized.pitch,
+        rate: deserialized.rate
+      };
     } catch (err) {
       console.log('Failed to restore state'); // eslint-disable-line no-console
     }
