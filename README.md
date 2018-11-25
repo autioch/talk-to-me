@@ -4,6 +4,16 @@ This is simple project for testing speech synthesis in the browsers.
 
 To see it in action, go to the [github page](http://autioch.github.io/talk-to-me/).
 
+## Support
+
+Speech worked for me pretty well in:
+- Firefox 63 _( Windows 10 )_
+- Edge _( Windows 10 )_
+- Chrome 70 _( Windows 10 )_
+- Chrome _( Andriod 8 )_
+- Chrome _iPad mini_ _( iOS 11.2.1 )_
+- Safari _iPad mini_ _( iOS 11.2.1 )_
+
 
 ## How it works
 
