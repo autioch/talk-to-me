@@ -18,9 +18,12 @@ export default class SynthesizeVoices extends Component {
   }
 
   render() {
+    const { voices } = this.props;
+    const selectedVoice = voices.find((voice) => voice.isSelected);
+
     return (
       <Select
-        value={this.state.value}
+        value={selectedVoice ? selectedVoice.id : null}
         onChange={this.setId}
         className="synthesize__language">
         {this.props.voices.map((voice) =>

@@ -29,7 +29,8 @@ export default {
     utterance.onend = stopSpeaking;
     utterance.onerror = (ev) => speachError(ev.error.message).stopSpeaking();
 
-    utterance.voice = selectedVoice;
+    utterance.voiceURI = selectedVoice.voiceURI;
+    utterance.lang = selectedVoice.lang;
     utterance.pitch = pitch;
     utterance.rate = rate;
 
